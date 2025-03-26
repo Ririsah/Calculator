@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { evaluate } from 'mathjs';
 import './Calculadora.css';
 
 const Calculadora = () => {
@@ -15,7 +16,7 @@ const Calculadora = () => {
 
     const calculate = () => {
         try {
-            setDisplayValue(eval(displayValue)); 
+            setDisplayValue(evaluate(displayValue));
         } catch (error) {
             setDisplayValue('Error');
         }
